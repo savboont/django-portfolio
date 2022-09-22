@@ -1,0 +1,53 @@
+{% extends 'home/header.html' %}
+
+{% load static %}
+
+
+{% block title %} Contact {% endblock %}
+
+{% block css_additional %}
+    <link rel="stylesheet" href="{% static 'home/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'home/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'home/css/style.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="gallery_area">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="section_title mb-20">
+                        <h3>My contact details</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="download_area">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6">
+                            <div class="download_text">
+                                <h3> You can contact me using the specified contacts </h3>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6">
+                            <div class="download_left">
+                                <h4 style="color: orange;"> Email </h4>
+                                <h3 style="color: white;"><a href="mailto:{{ contacts.email }}">{{ contacts.email }}</a></h3>
+                                <br>
+                                <h4 style="color: orange;"> Phone </h4>
+                                <h3 style="color: white;"><a href="tel:{{ contacts.phone }}">{{ contacts.phone }}</a></h3>
+                                <br>
+                                <h4 style="color: orange;"> Telegram </h4>
+                                <h3 style="color: white;"><a href="{{ contacts.telegram }}"> {{ contacts.telegram }} </a> </h3>
+                                <br>
+                                <h4 style="color: orange;"> My resume on HeadHunter.ru </h4>
+                                <h3 style="color: white;"><a href="{{ contacts.hhru }}"> Junior Python Developer </a> </h3>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

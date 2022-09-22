@@ -1,0 +1,47 @@
+{% extends 'home/header.html' %}
+
+{% load static %}
+
+
+{% block title %} Projects {% endblock %}
+
+{% block css_additional %}
+    <link rel="stylesheet" href="{% static 'home/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'home/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'home/css/style.css' %}">
+{% endblock %}
+
+{% block content %}
+    <!-- gallery_area start  -->
+    <div class="gallery_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="section_title mb-50">
+                        <h3>Some of my projects</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-xl-10 col-lg-10">
+                    <div class="row">
+                        {% for pr in proj %}
+                        <div class="col-xl-6 col-lg-6 col-md-6">
+                            <div class="single_gallery">
+                                <div class="thumb">
+                                    <img src="{{ pr.images.url }}" alt="" style="width: 450px; height: 420px;">
+                                </div>
+                                <div class="gallery_heading">
+                                    <span>{{ pr.description }}</span><br>
+                                    <span>Link to project <a href="{{ pr.proj_link }}">{{ pr.proj_name }}</a></span>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
