@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-4-sh$8@1j)zl%z
 # DEBUG = True
 DEBUG = bool(os.environ.get('DJANGO_DEBUG', True))
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['85.193.85.123', '127.0.0.1']
 
 
 # Application definition
@@ -81,11 +81,11 @@ WSGI_APPLICATION = 'portfolio.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'Portfolio',
-        'USER': 'Acer',
+        'NAME': 'portfolio',
+        'USER': 'acer',
         'PASSWORD': 'Rubicsab_20',
-        'HOST': '127.0.0.1',
-        'PORT': '5432'
+        'HOST': 'localhost',
+        'PORT': ''
     }
 }
 
@@ -145,7 +145,7 @@ DATABASES['default'].update(db_from_env)
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
-
+STATIC_URL = 'static/'
 # The absolute path to the directory where collectstatic will collect static files for deployment.
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
